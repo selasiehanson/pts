@@ -37,6 +37,34 @@ Route::get('/', function()
 	return View::make('home.index');
 });
 
+Route::get("admin", array("as" => "admin", "before" => "auth", "uses" => "member@index"));
+
+//todo: move this from here into a controller
+Route::get("login", function (){
+	return View::make("pages.login");
+});
+
+Route::post('login', function() {
+    $userdata = array(
+		'username' => Input::get("username"),
+		"password" => Input::get("password") 
+	);
+
+	if(Auth::attempt($userdata)){
+		return Redirect::to("admin");
+	}else {
+		return Redirect::to("login")->with("login_errors", true);
+	}
+});
+
+Route::get("logout", function (){
+	Auth::logout();
+	return Redirect::to("login");
+});
+
+Route::get("members", "member@members");
+Route::post("members", "member@member");
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

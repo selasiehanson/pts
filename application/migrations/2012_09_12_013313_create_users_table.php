@@ -13,9 +13,11 @@ class Create_Users_Table {
 			$table->increments("id");
 			$table->string("firstname");
 			$table->string("lastname");
-			$table->string("username");
+			$table->string("username",128);
 			$table->string("email")->unique();
-			$table->string("password");
+			$table->string("password",64);
+			$table->integer("role");
+			$table->boolean("active");
 			$table->timestamps();
 		});
 		
