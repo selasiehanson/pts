@@ -74,6 +74,20 @@ body {
 	font-size: 13px;
 }
 
+#payment_form .mini_control {
+	width: 120px;
+	margin-right: 24px;
+}
+
+#payment_form .maxi_control {
+	width: 150px;
+	margin-right: 24px;
+}
+
+#payment_form .breakdown_btn {
+	margin-top: 24px;
+}
+
 label, input, button, select, textarea { 
 	font-size: 12px;
 }

@@ -12,9 +12,18 @@
           </div>
           <div class="controls my_clear">
               <div class="pull-left">
-                <label>Amount:</label>
+                <label>Currency:</label>
                 <div>
-                  <input type="text" class="">
+                  <select class="mini_control">
+                    <option>GHC</option>
+                    <option>USD</option>
+                  </select>
+                </div>
+              </div>
+              <div class="pull-left">
+                <label>Total Amount:</label>
+                <div>
+                  <input type="text" class="mini_control">
                 </div>
               </div>
               <div class="pull-right">
@@ -24,27 +33,62 @@
                 </div>
               </div>
           </div>
-          <div>
-            <legend>Duration Of Payment</legend>
-          </div>          
+                  
           <div class="controls my_clear">
               <div class="pull-left">
-                <label>From:</label>
+                <label>Paying for Months:</label>
                 <div>
-                  <input type="text" class="">
+                  <input type="text" class="mini_control">
                 </div>
               </div>
               
-              <div class="pull-right">
-                <label>To:</label>
+              <div class="pull-left">
+                <label>Starting From:</label>
                 <div>
-                  <input type="text" class="">
+                  <input type="text" class="maxi_control">
                 </div>
               </div>
+               <div class="pull-right breakdown_btn">
+                  <a href="" class="btn btn-info">Generate BreakDown</a>
+               </div>
+
           </div>
           <div>
             <legend>Break Down</legend>
           </div>
+          <div>
+             <table class='table table-striped table-bordered my-table user_group_table'>
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>Currency</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr ng-repeat="prus in projectUsers">
+                    <td> {{ prus.name }}</td>
+                    <td> {{ prus.group }} </td>
+                    <td> <a href="#"> <i class='icon icon-remove'></i></a> </td>
+                  </tr> -->
+                  <tr>
+                    <td>Sept 2012</td>
+                    <td>GHC</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Oct 2012</td>
+                    <td>GHC</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Nov 2012</td>
+                    <td>GHC</td>
+                    <td>50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
          </form>
         </div>
         <div class="modal-footer">
