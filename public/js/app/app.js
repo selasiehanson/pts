@@ -1,1 +1,1 @@
-var main = angular.module('pts',["ptsServices"]);
+var main = angular.module('pts',["ptsServices","appHelpers"]);

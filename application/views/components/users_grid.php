@@ -11,7 +11,7 @@
     <table my-table class='table table-striped table-bordered my-table'>
         <thead>
           <tr>
-            <!-- <th>#</th> -->
+           <th class="grid_action2">#</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Username</th>
@@ -20,6 +20,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="user in users">
+            <td> {{$index + 1}} </td>
             <td> {{user.firstName}} </td>
             <td> {{user.lastName}} </td>
             <td> {{user.userName}} </td>
@@ -29,6 +30,6 @@
         </tbody>
     </table>
   </div>  
-<?php echo View::make("components.modals.user"); ?>
+<?php echo View::make("components.modals.user_form"); ?>
   
 </div>

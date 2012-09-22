@@ -61,7 +61,7 @@ body {
 	/*width : 700px !important;*/
 }
 
-#payments .modal .name_field {
+#payment_form .name_field {
 	width: 97%;
 }
 
@@ -75,8 +75,17 @@ body {
 }
 
 #payment_form .mini_control {
-	width: 120px;
+	width: 110px;
 	margin-right: 24px;
+}
+
+#payment_form .extra_mini_control{
+	width: 70px;
+	margin-right: 24px;
+}
+
+#payment_form .amount_field .add-on {
+	margin-left: -25px;
 }
 
 #payment_form .maxi_control {

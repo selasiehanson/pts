@@ -8,22 +8,20 @@
          <form class="form-vertical">
           <div class="controls">
             <label>Payment For:</label>
-            <span><span class="name_field uneditable-input"> Kofi Mensah <span></span>
+            <span><span class="name_field uneditable-input"> {{ currentMember.name }} <span></span>
           </div>
           <div class="controls my_clear">
               <div class="pull-left">
                 <label>Currency:</label>
                 <div>
-                  <select class="mini_control">
-                    <option>GHC</option>
-                    <option>USD</option>
+                  <select class="mini_control" ng-model="currentPayment.currencyId" ng-options="cur.id as cur.name for cur in currencies">
                   </select>
                 </div>
               </div>
               <div class="pull-left">
                 <label>Total Amount:</label>
-                <div>
-                  <input type="text" class="mini_control">
+                <div class="input-append amount_field">
+                  <input class="extra_mini_control" type="text"><span class="add-on">.00</span>
                 </div>
               </div>
               <div class="pull-right">
@@ -38,7 +36,7 @@
               <div class="pull-left">
                 <label>Paying for Months:</label>
                 <div>
-                  <input type="text" class="mini_control">
+                  <input type="text" class="mini_control" ng-model="currentPayment.numMonths">
                 </div>
               </div>
               
@@ -49,7 +47,7 @@
                 </div>
               </div>
                <div class="pull-right breakdown_btn">
-                  <a href="" class="btn btn-info">Generate BreakDown</a>
+                  <a href="" class="btn btn-info" ng-click="generateBreakDown(currentPayment)">Generate BreakDown</a>
                </div>
 
           </div>
@@ -66,33 +64,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- <tr ng-repeat="prus in projectUsers">
-                    <td> {{ prus.name }}</td>
-                    <td> {{ prus.group }} </td>
-                    <td> <a href="#"> <i class='icon icon-remove'></i></a> </td>
-                  </tr> -->
-                  <tr>
-                    <td>Sept 2012</td>
-                    <td>GHC</td>
-                    <td>50</td>
-                  </tr>
-                  <tr>
-                    <td>Oct 2012</td>
-                    <td>GHC</td>
-                    <td>50</td>
-                  </tr>
-                  <tr>
-                    <td>Nov 2012</td>
-                    <td>GHC</td>
-                    <td>50</td>
+                  <tr ng-repeat=" bkd in breakDown">
+                    <td> {{ bkd.month }}</td>
+                    <td> {{ bkd.currency }} </td>
+                    <td> <input class='input-mini' value="{{ bkd.amount }}">  </td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <input type='hidden' ng-model="currentMember.id">
          </form>
         </div>
         <div class="modal-footer">
-          <a href="#" class="btn btn-success"><i class='icon-white icon-th-list'></i> Save Payment </a>
+          <a href="#" class="btn btn-success" ng-click="submitPayment(member, currentPayment)"><i class='icon-white icon-th-list'></i> Save Payment </a>
           <a href="#" class="btn"><i class='icon icon-ban-circle'></i> Cancel</a>
         </div>
       </div>

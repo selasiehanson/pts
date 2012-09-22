@@ -12,6 +12,7 @@
     
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/pts_style.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -32,7 +33,9 @@
     <script type="text/javascript" src="js/app/app.js"></script>
     <script type="text/javascript" src="js/app/usercontroller.js"></script>
     <script type="text/javascript" src="js/app/membercontroller.js"></script>
+    <script type="text/javascript" src="js/app/paymentcontroller.js"></script>
     <script type="text/javascript" src="js/app/services.js"></script>
+    <script type="text/javascript" src="js/app/app_helpers.js"></script>
   </head>
 
   <body>

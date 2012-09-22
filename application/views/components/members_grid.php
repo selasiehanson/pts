@@ -18,7 +18,7 @@
   <table my-table class='table table-striped table-bordered my-table'>
       <thead>
         <tr>
-          <th>#</th>
+          <th class="grid_action2">#</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Phone Number</th>
@@ -33,10 +33,11 @@
           <td> {{member.lastName}} </td>
           <td> {{member.phone}} </td>
           <td> {{member.address}} </td>
-          <td> <a href=""><i class='icon icon-pencil' ng-click='makePayment(member)'></i></a> </td>
+          <td> <a href=""><i class='icon icon-plus' ng-click='makePayment(member)'></i></a> </td>
         </tr> 
       </tbody>
   </table>
 
-  <?php echo View::make("components.modals.member"); ?>
+  <?php echo View::make("components.modals.member_form"); ?>
+  <?php echo View::make("components.modals.payment_form"); ?>
 </div>
