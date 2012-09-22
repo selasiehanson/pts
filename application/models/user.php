@@ -9,8 +9,8 @@ class User extends Eloquent {
 		return $this->has_many("Payment");
 	}
 
-	public function set_password($password)
-	{
-		$this->set_attribute("hashed_password",Hash::make($password));
-	}
+	// public function set_password($password)
+	// {
+	// 	$this->set_attribute("hashed_password",Hash::make($password));
+	// }
 }

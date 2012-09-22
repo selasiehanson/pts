@@ -11,9 +11,9 @@ class Create_Users_Table {
 	{
 		Schema::create("users", function ($table){
 			$table->increments("id");
-			$table->string("firstname");
-			$table->string("lastname");
-			$table->string("username",128);
+			$table->string("first_name");
+			$table->string("last_name");
+			$table->string("user_name",128);
 			$table->string("email")->unique();
 			$table->string("password",64);
 			$table->integer("role");
@@ -23,9 +23,9 @@ class Create_Users_Table {
 		
 		//ADD A Default User
 		DB::table("users")->insert(array(
-			"firstname" => "admin",
-			"lastname" => "admin",
-			"username"=> "admin",
+			"first_name" => "admin",
+			"last_name" => "admin",
+			"user_name"=> "admin",
 			"email" => "soundfever18@gmail.com",
 			"password" => Hash::make("admin")
 		));

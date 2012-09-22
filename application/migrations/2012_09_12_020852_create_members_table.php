@@ -11,11 +11,11 @@ class Create_Members_Table {
 	{
 		Schema::create("members", function($table){
 			$table->increments("id");
-			$table->string("firstname");
-			$table->string("lastname");
+			$table->string("first_name");
+			$table->string("last_name");
 			$table->string("phone");
 			$table->string("address");
-			$table->date("dateofbirth");
+			$table->date("date_of_birth");
 			$table->integer("created_by"); 
 			$table->timestamps();
 		});

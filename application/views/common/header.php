@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="pts">
   <head>
     <meta charset="utf-8">
     <title>PTS</title>
@@ -11,7 +11,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/helpdesk_style.css" rel="stylesheet" type="text/css">
+    <link href="css/pts_style.css" rel="stylesheet" type="text/css">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -25,10 +25,14 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 
-      <!-- header scripts go here -->
+    <!-- header scripts go here -->
     <script type="text/javascript" src='js/libs/angular-1.0.1.js'></script>
     <script type="text/javascript" src='js/libs/angular-resource-1.0.1.js'></script>
     <!-- app scripts -->
+    <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/usercontroller.js"></script>
+    <script type="text/javascript" src="js/app/membercontroller.js"></script>
+    <script type="text/javascript" src="js/app/services.js"></script>
   </head>
 
   <body>

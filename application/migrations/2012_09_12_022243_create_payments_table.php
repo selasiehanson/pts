@@ -14,7 +14,7 @@ class Create_Payments_Table {
 			$table->integer("member_id");
 			$table->decimal("amount",10,2);
 			$table->string("duration");
-			$table->date("paymentdate");
+			$table->date("payment_date");
 			$table->integer("created_by");
 			$table->timestamps();
 		});

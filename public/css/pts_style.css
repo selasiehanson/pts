@@ -1,6 +1,8 @@
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
+	font-size: 12px !important;
+	font-family:  "Lucida Sans Unicode", "Lucida Grande", "tahoma", Verdana, sans-serif !important; 
 	/*background-color: #C6BEA6;
 	background: url("../img/custom/back1.png");
 	background-repeat: repeat repeat;*/
@@ -16,6 +18,64 @@ body {
 .toolbar {
 	margin-bottom: 30px;
     margin-top: 10px;
+}
+
+.my-table thead {
+    background-color: #EBEBEB;
+}
+
+.my-table th, .my-table td{
+	font-size: 12px;
+	line-height: 13px;
+}
+
+.member_search {
+	width: 650px;
+}
+.member_search label {
+	display: inline;
+	margin-right: 20px;
+}
+
+.member_search input { 
+	width: 85%;
+}
+
+.grid_action1 {
+	width: 16px;
+}
+
+.grid_action2 {
+	width: 32px;
+}
+
+.grid_action3 {
+	width: 48px;
+}
+
+.grid_action4 {
+	width: 64px;
+}
+
+#payments .modal{
+	/*width : 700px !important;*/
+}
+
+#payments .modal .name_field {
+	width: 97%;
+}
+
+.my_clear {
+	clear : both;
+	overflow: hidden;
+}
+
+#payments .modal legend {
+	font-size: 13px;
+}
+
+label, input, button, select, textarea { 
+	font-size: 12px;
 }
 
 /*.row-number-item , .action-item {

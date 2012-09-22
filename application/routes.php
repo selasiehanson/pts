@@ -62,6 +62,12 @@ Route::get("logout", function (){
 	return Redirect::to("login");
 });
 
+//user routes
+Route::get("users", "user@users");
+Route::post("users", "user@user" );
+
+
+//member routes
 Route::get("members", "member@members");
 Route::post("members", "member@member");
 
