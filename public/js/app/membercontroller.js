@@ -1,7 +1,14 @@
-function MemberController ($scope, $http,Member, MSG,DateHelper){
+function MemberController ($scope, $http,Member,Payment, MSG,DateHelper){
+	var paymentForm = $("#payment_form");
 	var paymentDate = $('#paymentDate');
+	var dob = $("#dob");
+	var format = 'dd-mm-yyyy';
 	paymentDate.datepicker({
-		format: 'dd-mm-yyyy'
+		format: format
+	});
+
+	dob.datepicker({
+		format : format
 	});
 
 	$scope.formTitle = "Add Member";
@@ -35,6 +42,7 @@ function MemberController ($scope, $http,Member, MSG,DateHelper){
 			
 		}else {
 			var member =  angular.copy(newMember);
+			member["dateOfBirth"] = dob.val();
 			var theMember = new Member(member);
 			
 			theMember.$save(function (){
@@ -97,8 +105,7 @@ function MemberController ($scope, $http,Member, MSG,DateHelper){
 	}
 
 	$scope.makePayment = function (member){
-		var paymentForm = $("#payment_form");
-		paymentForm.modal();
+		paymentForm.modal("show");
 		$scope.currentPayment = {};
 		$scope.currentPayment.memberId = member.id;
 		$scope.currentPayment["memberName"] = member.firstName + " " + member.lastName;
@@ -114,20 +121,29 @@ function MemberController ($scope, $http,Member, MSG,DateHelper){
 		});
 		return total; 
 	}
+
 	$scope.submitPayment = function (currentPayment){
-		//console.log(currentPayment);
-		//console.log($scope.breakDown);
+		var msg = "";
 		var sum = computeTotalBreakDown();
 		if ( sum !== parseInt( currentPayment.totalAmount)){
 			MSG.show("Break Down sums to "+ sum + " which is not equal to total amount of " + currentPayment.totalAmount);
 			return;
 		}else {
 			var data  = angular.copy(currentPayment);
-			//data["all"] = [{x:20,y:30}];
 			data["breakdown"] = $scope.breakDown;
-			console.log(data);
-			$http.post("payments",data).success( function (res){
-				console.log(res);
+			var payment =  new Payment(data);
+			payment.$save( function (res){
+				if(res.success){
+					msg = res.message || "Payments Saved!";
+					MSG.show(msg,"success");
+					paymentForm.modal("hide");
+					paymentDate.val("");
+					$scope.currentPayment = {}
+					$scope.breakDown = [];
+				}else {
+					msg = res.message || "There was a problem saving the transaction. Please Try again";
+					MSG.show(msg);
+				}
 			});
 		}
 			

@@ -72,7 +72,7 @@ Route::get("members", "member@members");
 Route::post("members", "member@member");
 
 //payements 
-Route::get("payements", "payment@payments");
+Route::get("payments", "payment@payments");
 Route::post("payments", "payment@payment");
 
 /*

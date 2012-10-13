@@ -9,4 +9,9 @@ factory("User", function ($resource){
 	    query: {method:'GET', params:{}, isArray:true},
 	    update : {method : 'PUT'}
 	  });
+}).factory("Payment", function ($resource){
+	return $resource('payments/:id', {id : '@id'}, {
+	    query: {method:'GET', params:{}, isArray:true},
+	    update : {method : 'PUT'}
+	  });
 });

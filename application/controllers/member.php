@@ -40,7 +40,7 @@ class Member_Controller extends Base_Controller {
 			"address" => $data->address,
 			"date_of_birth" => $data->dateOfBirth,
 			"created_by" => Auth::user()->id
-			);
+		);
 
 		$rules = array(
 			"first_name" => 	"required",

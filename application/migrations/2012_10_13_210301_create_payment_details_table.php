@@ -1,6 +1,6 @@
 <?php
 
-class Create_Payments_Table {
+class Create_Payment_Details_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,13 +9,14 @@ class Create_Payments_Table {
 	 */
 	public function up()
 	{
-		Schema::create("payments", function ($table){
+		Schema::create("payment_details", function ($table){
 			$table->increments("id");
-			$table->integer("member_id");
-			$table->decimal("amount",10,2);
+			$table->integer("payment_id");
+			
+			$table->date("month");
 			$table->integer("currency_id");
-			$table->integer("duration");
-			//$table->date("payment_date");
+			$table->decimal("amount",10,2);
+
 			$table->integer("created_by");
 			$table->timestamps();
 		});
@@ -28,7 +29,7 @@ class Create_Payments_Table {
 	 */
 	public function down()
 	{
-		Schema::drop("payments");
+		Schema::drop("payment_details");
 	}
 
 }
