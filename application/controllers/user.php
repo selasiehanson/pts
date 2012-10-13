@@ -5,24 +5,40 @@ class User_Controller extends Base_Controller {
 
 	public function get_users(){
 		
-		$users = DB::table('users')->order_by("created_at","asc")->get();
+		//USING ELOQUENT
+		$users = User::order_by("created_at","asc")->get();
+		$out = array();
 		
-		$out = array_map(function ($data){
-			$d = array();
-			$d["id"] = $data->id;
-			$d["firstName"] = $data->first_name;
-			$d["lastName"] = $data->last_name;
-			$d["email"] = $data->email;
-			$d["userName"] = $data->user_name;
-			return $d;			
-		}, $users);
+		//array map does not work so we have to resort to this
+		foreach ($users as $user) {
+			$_user = array();
+			$_user["id"] = $user->id;
+			$_user["firstName"] = $user->first_name;	
+			$_user["lastName"] = $user->last_name;
+			$_user["email"] = $user->email;
+			$_user["userName"] = $user->user_name;
+			array_push($out, $_user);
+		}
 
-		return Response::json( $out);
+		return Response::json($out);
+		
+		//USING FLUENT
+		//$users = DB::table('users')->order_by("created_at","asc")->get();
+		// $out = array_map(function ($data){
+		// 	$d = array();
+		// 	$d["id"] = $data->id;
+		// 	$d["firstName"] = $data->first_name;
+		// 	$d["lastName"] = $data->last_name;
+		// 	$d["email"] = $data->email;
+		// 	$d["userName"] = $data->user_name;
+		// 	return $d;			
+		// }, $users);
+
+		// return Response::json( $out);
 	}
 
 	public function post_user(){
-		//todo check and make sure that user of looged in else do not allow creation
-		//
+		//todo check and make sure that user of logged in else do not allow creation
 		$data = Input::json();
 		$new_user = array(
 			"first_name" => $data->firstName,

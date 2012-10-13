@@ -10,7 +10,7 @@
 
        <div class="pull-right member_search">
         <label>Search:</label>
-        <input type="text" name="">
+        <input type="text" name="" ng-model='filterExpr'>
        </div>
 
     </div>
@@ -27,7 +27,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="member in members">
+        <!-- <tr ng-repeat="member in members"> -->
+        <tr ng-repeat="member in filtered = (members | filter:filterExpr)">  
           <td> {{$index + 1}}</td>
           <td> {{member.firstName}} </td>
           <td> {{member.lastName}} </td>

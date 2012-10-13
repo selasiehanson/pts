@@ -71,6 +71,10 @@ Route::post("users", "user@user" );
 Route::get("members", "member@members");
 Route::post("members", "member@member");
 
+//payements 
+Route::get("payements", "payment@payments");
+Route::post("payments", "payment@payment");
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

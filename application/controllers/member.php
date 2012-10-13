@@ -18,7 +18,7 @@ class Member_Controller extends Base_Controller {
 		$out =  array_map(function($data){
 			$d = array();
 			$d["id"] = $data->id;
-		$d["firstName"] = $data->first_name;
+			$d["firstName"] = $data->first_name;
 			$d["lastName"] = $data->last_name;
 			$d["phone"] = $data->phone;
 			$d["address"] = $data->address;

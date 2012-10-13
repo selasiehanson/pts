@@ -11,6 +11,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
     <link href="css/pts_style.css" rel="stylesheet" type="text/css">
     <link href="css/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
 

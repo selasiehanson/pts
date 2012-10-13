@@ -7,6 +7,13 @@ body {
 	background: url("../img/custom/back1.png");
 	background-repeat: repeat repeat;*/
 }
+
+.datepicker{
+	z-index: 3000;
+}
+.btn i {
+	margin-top: 4px !important;
+}
 .help-inline {
     font-style: italic;
     font-size: 11px;
@@ -94,7 +101,7 @@ body {
 }
 
 #payment_form .breakdown_btn {
-	margin-top: 24px;
+	/*margin-top: 24px;*/
 }
 
 label, input, button, select, textarea { 
