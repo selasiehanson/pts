@@ -33,6 +33,7 @@ class Payment_Controller extends Base_Controller {
 		$newPayment = array(
 			"member_id" => $data->memberId,
 			"currency_id" => $data->currencyId,
+			"start_date" => date($data->startDate),
 			"amount" => $data->totalAmount,
 			"duration" => $data->numMonths,
 			"created_by" => Auth::user()->id

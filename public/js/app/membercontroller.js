@@ -89,6 +89,7 @@ function MemberController ($scope, $http,Member,Payment, MSG,DateHelper){
 		
 
 		DateHelper.init(paymentDate.data().datepicker.date);
+		$scope.currentPayment.startDate = paymentDate.data().datepicker.date;
 		//clear the breakdown array
 		$scope.breakDown = [];
 		var i= 0;
@@ -129,6 +130,7 @@ function MemberController ($scope, $http,Member,Payment, MSG,DateHelper){
 			MSG.show("Break Down sums to "+ sum + " which is not equal to total amount of " + currentPayment.totalAmount);
 			return;
 		}else {
+			//$scope.currentPayment.startDate = paymentDate.val();
 			var data  = angular.copy(currentPayment);
 			data["breakdown"] = $scope.breakDown;
 			var payment =  new Payment(data);

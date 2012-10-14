@@ -15,7 +15,7 @@ class Create_Payments_Table {
 			$table->decimal("amount",10,2);
 			$table->integer("currency_id");
 			$table->integer("duration");
-			//$table->date("payment_date");
+			$table->date("start_date");
 			$table->integer("created_by");
 			$table->timestamps();
 		});
